@@ -30,7 +30,6 @@
 // }
 
 export async function parsePDF(filePath) {
-  // Mock data for hackathon - bypass pdf-parse completely
   const airlines = ["IndiGo", "Air India", "SpiceJet", "Vistara"];
   const randomAirline = airlines[Math.floor(Math.random() * airlines.length)];
   

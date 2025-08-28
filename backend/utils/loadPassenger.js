@@ -10,7 +10,7 @@ export async function loadPassengers() {
   const jsonArray = await csv().fromFile(csvPath);
 
   return jsonArray
-    .filter(p => p["Ticket Number"]) // remove empty rows
+    .filter(p => p["Ticket Number"]) 
     .map((p, index) => ({
       id: (index + 1).toString(),
       ticketNumber: p["Ticket Number"].toString().replace(/\..*$/, ""), // remove decimals

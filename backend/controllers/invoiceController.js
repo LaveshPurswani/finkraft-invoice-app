@@ -31,7 +31,7 @@ export const downloadInvoice = async (req, res) => {
   }
 };
 
-// Parse invoice
+// Parse invoice fucntion
 export const parseInvoice = async (req, res) => {
   const { id } = req.params;
   const passenger = passengers.find((p) => p.id === id);
@@ -40,7 +40,7 @@ export const parseInvoice = async (req, res) => {
     return res.status(404).json({ error: "Passenger not found" });
   }
 
-  // Define the file path first
+  // Defining the file path first
   const filePath = path.join(
     process.cwd(),
     "backend",
@@ -48,7 +48,7 @@ export const parseInvoice = async (req, res) => {
     `${passenger.ticketNumber}.pdf`
   );
 
-  // Check if the file exists
+  // Checking if the file exists
   if (!fs.existsSync(filePath)) {
     passenger.parseStatus = "Error";
     return res.status(404).json({ error: `PDF not found at ${filePath}` });

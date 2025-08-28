@@ -1,6 +1,6 @@
 import express, { json } from "express";
 import cors from "cors";
-import invoiceRoutes from "./routes/invoice.js"; // 👈 import your routes
+import invoiceRoutes from "./routes/invoice.js"; 
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.use(cors());
 app.use(json());
 
 // Routes
-app.use("/api/invoices", invoiceRoutes); // 👈 mount the invoice routes
+app.use("/api/invoices", invoiceRoutes); 
 
 // Test route
 app.get("/", (req, res) => {

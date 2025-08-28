@@ -4,6 +4,6 @@ import { getAllInvoices, downloadInvoice, parseInvoice } from "../controllers/in
 const router = express.Router();
 router.get("/", getAllInvoices);
 router.post("/download/:id", downloadInvoice);
-router.post("/parse/:id", parseInvoice); // 👈 Add this
+router.post("/parse/:id", parseInvoice);
 
 export default router;
